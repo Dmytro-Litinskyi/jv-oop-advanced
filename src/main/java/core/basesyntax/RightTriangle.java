@@ -11,16 +11,6 @@ public class RightTriangle extends Figure {
     }
 
     @Override
-    public String getColor() {
-        return super.getColor();
-    }
-
-    @Override
-    public void setColor(String color) {
-        super.setColor(color);
-    }
-
-    @Override
     public double getArea() {
         return (double) firstLeg * secondLeg / 2;
     }
@@ -28,7 +18,7 @@ public class RightTriangle extends Figure {
     @Override
     public void draw() {
         System.out.println("Figure: " + this.getClass().getSimpleName() + " area: " + getArea()
-                + " sq.units, " + firstLeg + " units, " + secondLeg
+                + " sq.units, firstLeg: " + firstLeg + " units, secondLeg: " + secondLeg
                 + " units, color: " + getColor());
     }
 }

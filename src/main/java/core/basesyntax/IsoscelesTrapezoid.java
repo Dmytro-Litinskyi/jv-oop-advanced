@@ -13,16 +13,6 @@ public class IsoscelesTrapezoid extends Figure {
     }
 
     @Override
-    public String getColor() {
-        return super.getColor();
-    }
-
-    @Override
-    public void setColor(String color) {
-        super.setColor(color);
-    }
-
-    @Override
     public double getArea() {
         return (firstBase + secondBase) * (double) height / 2;
     }
@@ -30,7 +20,8 @@ public class IsoscelesTrapezoid extends Figure {
     @Override
     public void draw() {
         System.out.println("Figure: " + this.getClass().getSimpleName() + " area: " + getArea()
-                + " sq.units, " + firstBase + " units, " + secondBase + " units, "
+                + " sq.units, firstBase: " + firstBase + " units, secondBase: "
+                + secondBase + " units, height: "
                 + height + " units, color: " + getColor());
     }
 }

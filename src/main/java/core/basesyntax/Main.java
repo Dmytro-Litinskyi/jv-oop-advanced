@@ -10,11 +10,13 @@ public class Main {
         for (int i = 0; i < FINAL_ARRAY_SIZE; i++) {
             if (i < FINAL_ARRAY_SIZE / 2) {
                 arrayOfFigures[i] = figureSupplier.getRandomFigure();
-                arrayOfFigures[i].draw();
             } else {
-                arrayOfFigures[i] = figureSupplier.getDeafaultFigure();
-                arrayOfFigures[i].draw();
+                arrayOfFigures[i] = figureSupplier.getDefaultFigure();
             }
+        }
+
+        for (Figure arrayOfFigure : arrayOfFigures) {
+            arrayOfFigure.draw();
         }
     }
 }

@@ -15,31 +15,37 @@ public class FigureSupplier {
 
         switch (randomFigureType) {
             case "CIRCLE" : {
-                return new Circle(colorSupplier.getRandomColor(),
-                        random.nextInt(MAX_RANDOM_NUMBER));
+                String color = colorSupplier.getRandomColor();
+                int radius = random.nextInt(MAX_RANDOM_NUMBER);
+                return new Circle(color, radius);
             }
             case "ISOSCELES_TRAPEZOID" : {
-                return new IsoscelesTrapezoid(colorSupplier.getRandomColor(),
-                        random.nextInt(MAX_RANDOM_NUMBER),
-                        random.nextInt(MAX_RANDOM_NUMBER),
-                        random.nextInt(MAX_RANDOM_NUMBER));
+                String color = colorSupplier.getRandomColor();
+                int firstBase = random.nextInt(MAX_RANDOM_NUMBER);
+                int secondBase = random.nextInt(MAX_RANDOM_NUMBER);
+                int height = random.nextInt(MAX_RANDOM_NUMBER);
+                return new IsoscelesTrapezoid(color, firstBase, secondBase, height);
             }
             case "RECTANGLE" : {
-                return new Rectangle(colorSupplier.getRandomColor(),
-                        random.nextInt(MAX_RANDOM_NUMBER),
-                        random.nextInt(MAX_RANDOM_NUMBER));
+                String color = colorSupplier.getRandomColor();
+                int shorterSide = random.nextInt(MAX_RANDOM_NUMBER);
+                int longerSide = random.nextInt(MAX_RANDOM_NUMBER);
+                return new Rectangle(color, shorterSide, longerSide);
             }
             case "RIGHT_TRIANGLE" : {
-                return new RightTriangle(colorSupplier.getRandomColor(),
-                        random.nextInt(MAX_RANDOM_NUMBER),
-                        random.nextInt(MAX_RANDOM_NUMBER));
+                String color = colorSupplier.getRandomColor();
+                int firstLeg = random.nextInt(MAX_RANDOM_NUMBER);
+                int secondLeg = random.nextInt(MAX_RANDOM_NUMBER);
+                return new RightTriangle(color, firstLeg, secondLeg);
             }
-            default: return new Square(colorSupplier.getRandomColor(),
-                    random.nextInt(MAX_RANDOM_NUMBER));
+            default:
+                String color = colorSupplier.getRandomColor();
+                int side = random.nextInt(MAX_RANDOM_NUMBER);
+                return new Square(color, side);
         }
     }
 
-    public Figure getDeafaultFigure() {
+    public Figure getDefaultFigure() {
         return new Circle(DEFAULT_COLOR, DEFAULT_RADIUS);
     }
 }
